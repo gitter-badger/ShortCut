@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="UTF-8">
 		<title>
@@ -12,6 +13,7 @@
 		<script src="script.js"></script>
 
 	</head>
+
 	<body>
 		<div class="body">
 
@@ -57,26 +59,10 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
 					</div>
 					<div class="inner">
-						<?php if (!isset($_GET['url'])): ?>
-							<form method="get">
-								<input type="text" name="url" placeholder="Insert your URL">
-								<input type="submit" value="Get short URL">
-							</form>
-						<?php else:
-							$url = str_replace(' ', '', $_GET['url']);
-							if (!empty($url)):
-								?>
-
-
-								<input type="text" value="<?= 'Hello ' . $url ?>" readonly>
-
-								<?php
-							else: ?>
-								<input type="text" value="Not a valid url !" readonly>
-								<input type="button" value="Return to home">
-						<?php
-							endif;
-						endif; ?>
+						<form action="proc.php" method="get">
+							<input type="text" name="url" placeholder="Insert your URL">
+							<input type="submit" value="Get short URL">
+						</form>
 					</div>
 					<div class="footer">
 						<p>Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
