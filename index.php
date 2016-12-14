@@ -20,7 +20,7 @@
 			<div class="outer">
 
 				<div class="middle">
-					<!--Navbar Start-->
+					<!--NavBar Start-->
 					<div class="navBar">
 						<div class="navContainer">
 							<!-- TODO: it will convert to user photo when user is signed in . -->
@@ -50,16 +50,18 @@
 
 						</div>
 					</div>
-					<!--Navbar End-->
+					<!--NavBar End-->
 					<div class="header">
-						<div class="wsname">
+						<!--TODO: let user choose website name-->
+						<div class="WebSiteName">
 							<h1>WebSite Name</h1>
 						</div>
 
+						<!--TODO: let user choose website description-->
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
 					</div>
 					<div class="inner">
-						<form action="proc.php" method="get">
+						<form action="process.php" method="get">
 							<input type="text" name="url" placeholder="Insert your URL">
 							<input type="submit" value="Get short URL">
 						</form>
