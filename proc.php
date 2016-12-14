@@ -1,5 +1,5 @@
 <?php
-	$config = include('config.php');
+	$config = include(__DIR__.'config.php');
 	const CHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 
