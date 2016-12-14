@@ -12,6 +12,7 @@
 			$len = strlen(CHARACTERS);
 			$alias = '';
 			for ($i = 0; $i < $len; $i++) {
+				// try to create random number then turn to ascii
 				$alias .= CHARACTERS[rand(0, $len - 1)];
 			}
 
