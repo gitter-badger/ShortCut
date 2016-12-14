@@ -1,8 +1,5 @@
 <?php
 
-	class config {
-
-	}
 // values for debugging only
 	return array(
 		'host'=>'localhost',

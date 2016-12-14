@@ -1,7 +1,5 @@
 <?php
 	$config = require('config.php');
-	const CHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
 
 	if (isset($_GET['url'])) {
 		$url = str_replace(' ', '', $_GET['url']);
@@ -9,15 +7,17 @@
 			// TODO:Check signed in user .
 			// null value is for visitor
 			$userId = null;
-			$len = strlen(CHARACTERS);
 			$alias = '';
-			for ($i = 0; $i < $len; $i++) {
-				// try to create random number then turn to ascii
-				$alias .= CHARACTERS[rand(0, $len - 1)];
+			for ($i = 0; $i < 7; $i++) {
+				$num = rand(48,122);
+				if ($num < 57 or ($num < 91 and $num > 64) or $num > 96)
+					$alias .=chr($num);
+				else
+					$i--;
 			}
 
 			$db = new mysqli($config['host'], $config['user'],
-				$config['pass'], $config['DBName']);
+				$config['pass'], $config['database']);
 			$sql = $db->prepare("INSERT INTO urls(userid,alias,link) VALUES (?,?,?)");
 			$sql->bind_param('iss', $userId, $alias, $url);
 			$sql->execute();
