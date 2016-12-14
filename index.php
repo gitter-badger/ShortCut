@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<?php
-		include_once 'stylesManager.php';
+		include_once 'includes/stylesManager.php';
 		global $info;
 		?>
 	<head>
@@ -17,7 +17,15 @@
 	<body>
 		<?php
 			require_once('themes/'.getMainTheme().'/index.php');
+			if (isset($_GET['u'])) {
+				$config = require('config.php');
+				$db = new PDO('mysql:host=' . $config['host'] . ';dbname=' .
+					$config['database'], $config['user'], $config['pass']);
+				$sql = $db->prepare('SELECT link FROM urls WHERE alias = :alias');
+				$sql->execute(array(':alias'=>$_GET['u']));
 
+				header('Location: http://'.$sql->fetch()[0]); // TODO: remove http or https from url when save it in DB
+			}
 		?>
 	</body>
 </html>

@@ -53,10 +53,7 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
 					</div>
 					<div class="inner">
-						<form action="process.php" method="get">
-							<input type="text" name="url" placeholder="Insert your URL">
-							<input type="submit" value="Get short URL">
-						</form>
+						<?php include 'includes/form.php' ?>
 					</div>
 					<div class="footer">
 						<p>Copyright (c) 2016 Copyright Holder All Rights Reserved.</p>
