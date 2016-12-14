@@ -1,5 +1,5 @@
 <?php
-	include_once 'config.php';
+	$config = include_once 'config.php';
 	const CHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 
@@ -16,8 +16,8 @@
 				$alias .= CHARACTERS[rand(0, $len - 1)];
 			}
 
-			$db = new mysqli($CONFIG['host'], $CONFIG['user'],
-				$CONFIG['pass'], $CONFIG['DBName']);
+			$db = new mysqli($config['host'], $config['user'],
+				$config['pass'], $config['DBName']);
 			$sql = $db->prepare("INSERT INTO urls(userid,alias,link) VALUES (?,?,?)");
 			$sql->bind_param('iss', $userId, $alias, $url);
 			$sql->execute();
@@ -32,3 +32,4 @@
 		header('Location: index.php');
 		exit();
 	}
+
