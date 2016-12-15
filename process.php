@@ -2,7 +2,9 @@
 	$config = require('config.php');
 
 	if (isset($_GET['url'])) {
-		$url = str_replace(' ', '', $_GET['url']);
+
+		$url = str_replace('https://', '', str_replace('http://',
+			'', str_replace(' ', '', $_GET['url'])));
 		if (!empty($url)) {
 			// TODO:Check signed in user .
 			// null value is for visitor
@@ -15,6 +17,7 @@
 				else
 					$i--;
 			}
+
 
 			$db = new PDO('mysql:host=' . $config['host'] . ';dbname=' .
 				$config['database'], $config['user'], $config['pass']);
