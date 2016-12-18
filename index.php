@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="<?= 'themes/',$info['theme'],'/style.css' ?>"/>
 		<link rel="stylesheet" type="text/css" href="<?= 'themes/',$info['theme'],'/rtl.css' ?>"/>
 		<script type="text/javascript" rel="script" src="<?= 'themes/',$info['theme'],'/script.js'?>"></script>
+		<script type="text/javascript" rel="script" src="script.js"></script>
 	</head>
 	<body>
 		<?php

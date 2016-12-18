@@ -325,11 +325,16 @@ input[type="button"] {
     font-weight: bolder;
     font-size: 1em;
     opacity: 0.8;
-    margin:0 auto; display:block;
+    margin:0 auto 10px auto; display:block;
+
 }
 
 input[type="button"]:hover {
     opacity: 1;
+}
+
+input[type="button"]:active {
+    background-color: #14725d;
 }
 
 input[name="url"]:focus {
