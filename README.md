@@ -1,5 +1,14 @@
-# |ShortCut|
+# | ShortCut |
 Simple URL Shortener script working with php 7.0
+
+** **SCRIPT IS NOT USEABLE YET** **
+
+TODO List :
+* Create user managment system .
+* Auto get web site info which is set by admin .
+* ...
+
+---
 
 Licensed by GPL v3 .
 
